@@ -155,6 +155,16 @@ function HelpPage() {
     });
   };
 
+  const handleLogin = () => {
+    ideMessenger.post("pearaiLogin", undefined);
+    navigate("/");
+  };
+
+  const handleLogout = () => {
+    ideMessenger.post("pearaiLogout", undefined);
+    navigate("/onboarding");
+  };
+
   return (
     <div>
       <div
@@ -177,12 +187,9 @@ function HelpPage() {
           <StyledButton
             className="inline-flex flex-shrink-0"
             themeType={themeType}
-            onClick={() => {
-              ideMessenger.post("pearaiLogin", undefined);
-              navigate("/");
-            }}
+            onClick={session ? handleLogout : handleLogin}
           >
-            {session ? "Relogin to PearAI" : "Login to PearAI"}
+            {session ? "Logout of PearAI" : "Login to PearAI"}
           </StyledButton>
           <StyledLink
             href="https://trypear.ai/"

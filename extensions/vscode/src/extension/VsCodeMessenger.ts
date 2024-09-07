@@ -110,8 +110,12 @@ export class VsCodeMessenger {
     });
     this.onWebview("bigChat", (msg) => {
       vscode.commands.executeCommand("pearai.resizeAuxiliaryBarWidth");
-    });this.onWebview("pearaiLogin", (msg) => {
+    });
+    this.onWebview("pearaiLogin", (msg) => {
       vscode.commands.executeCommand("pearai.login");
+    });
+    this.onWebview("pearaiLogout", (msg) => {
+      vscode.commands.executeCommand("pearai.logout");
     });
     this.onWebview("lastChat", (msg) => {
       vscode.commands.executeCommand("pearai.loadRecentChat");

@@ -34,6 +34,7 @@ export type ToIdeFromWebviewProtocol = ToIdeFromWebviewOrCoreProtocol & {
   openHistory: [undefined, void];
   appendSelected: [undefined, void];
   pearaiLogin: [undefined, void];
+  pearaiLogout: [undefined, void];
 };
 
 export type ToWebviewFromIdeProtocol = ToWebviewFromIdeOrCoreProtocol & {
